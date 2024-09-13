@@ -53,14 +53,14 @@ class ImageCamouflager():
         return output
         
     def process_background(self):
-        print "> processing background image"
+        print("> processing background image")
         result = self.image_processor.luminanceNoAlpha(self.background)
         result = self.image_processor.quantizationNoAlpha(result)
         
         self.processed_background = result
         
     def process_overlay(self):
-        print "> processing overlay image"
+        print("> processing overlay image")
         
         result = self.image_processor.luminance(self.overlay)
         result = self.adjust_brightness(self.background, result)
@@ -69,7 +69,7 @@ class ImageCamouflager():
         self.processed_overlay = result
         
     def adjust_brightness(self, reference, image_to_be_adjusted):
-        print "> adjusting brightness"
+        print("> adjusting brightness")
         
         bright_factors = self.calculate_brightness_factors(reference, image_to_be_adjusted)
         bright_difference = bright_factors[0] - bright_factors[1]
@@ -92,7 +92,7 @@ class ImageCamouflager():
         
 
     def create_textures(self, image, quantizatedImage, region):
-        print "> collecting textures"
+        print("> collecting textures")
         
         height, width, channels = region.shape
         textures = [[],[],[],[]]
@@ -131,7 +131,7 @@ class ImageCamouflager():
         return textures
 
     def apply_textures(self, image, textures):
-        print "> applying textures"
+        print("> applying textures")
         
         height, width, channels = image.shape
         texturePointers = [0,0,0,0]

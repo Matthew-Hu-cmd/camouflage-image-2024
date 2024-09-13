@@ -22,7 +22,7 @@ class ImageResizer():
         output = overlay
     
     def resize(self):
-        print "> resize the overlay image:\n\tw - up\n\ta - left\n\ts - down\n\td - right\n\n\tn - smaller\n\tm - bigger\n\n\tq - finish"
+        print ("> resize the overlay image:\n\tw - up\n\ta - left\n\ts - down\n\td - right\n\n\tn - smaller\n\tm - bigger\n\n\tq - finish")
         
         height, width, channels = self.background.shape
         

@@ -1,6 +1,6 @@
-import Tkinter as tk
-from Tkinter import Tk, Frame, BOTH
-from tkFileDialog import askopenfilename
+import tkinter as tk
+from tkinter import Tk, Frame, BOTH
+from tkinter.filedialog import askopenfilename
 
 
 class FilePicker(Frame):

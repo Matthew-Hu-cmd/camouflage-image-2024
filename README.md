@@ -20,6 +20,7 @@ python src/camouflage_image.py <BACKGROUND IMAGE PATH> <OVERLAY IMAGE PATH>
 
 Working example:
 
+要保证前景和背景的尺寸是一致的，更改了一些python2.7时代不兼容的接口，比如print
 ```
-python src/camouflage_image.py images/mountain.jpg images/mountain_overlay.png
+python src/camouflage_image.py assets/background/mountain.jpg assets/overlay/dog.png
 ```
