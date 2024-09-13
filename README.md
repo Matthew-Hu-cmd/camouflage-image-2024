@@ -4,11 +4,14 @@ This project was developed in the discipline of Fundamentals of Image Processing
 
 The goal is to implement a basic version of the algorithm show in the paper [Camouflage Images](http://www.graphics.stanford.edu/~niloy/research/camouflage/camouflage_images_sig_10.html) presented at SIGGRAPH.
 
-## Setup
+## Setup2024
 
-Python 2.7.*
-
-`make setup` to install the dependencies.
+```bash
+conda create --name camouflage_env python=3.10.9
+conda activate camouflage_env
+pip install numpy==1.23.5
+pip install opencv-python #4.10.0.84
+```
 
 ## Execute
 
