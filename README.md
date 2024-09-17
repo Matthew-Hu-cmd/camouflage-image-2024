@@ -29,6 +29,10 @@ Working example:
 ```
 python src/camouflage_image.py assets/background/mountain.jpg assets/overlay/dog.png
 ```
+## Execute Batched Imgs
+```
+python src/batch_camouflage.py
+```
 
 ## 批量化处理图像作为伪装图像生成对比实验
 - 从coco里选出自然场景的图 ✅
