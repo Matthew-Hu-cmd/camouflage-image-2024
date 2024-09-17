@@ -11,6 +11,8 @@ conda create --name camouflage_env python=3.10.9
 conda activate camouflage_env
 pip install numpy==1.23.5
 pip install opencv-python #4.10.0.84
+pip install pillow
+pip install tqdm
 ```
 
 ## Execute
@@ -27,3 +29,8 @@ Working example:
 ```
 python src/camouflage_image.py assets/background/mountain.jpg assets/overlay/dog.png
 ```
+
+## 批量化处理图像作为伪装图像生成对比实验
+- 从coco里选出自然场景的图 ✅
+- resize成和前景一样大小 ✅
+- 脚本批量化调用合成接口
