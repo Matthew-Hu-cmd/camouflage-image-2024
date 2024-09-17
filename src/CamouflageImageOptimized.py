@@ -47,7 +47,7 @@ textures = [[],[],[],[]]
 quantizationLevels = [0,85,170,255]
 height, width, channels = background.shape
 
-print "> 1st iteration"
+print("> 1st iteration")
 # 1st iteration
 for row in range(0,height):
     for column in range(0,width - 1):
@@ -67,7 +67,7 @@ brightnessDiff = sum(backBrightness)/len(backBrightness) - sum(overBrightness)/l
 
 background = cv2.imread(sys.argv[1], 1)
 
-print "> 2nd iteration"
+print("> 2nd iteration")
 # 2nd iteration
 for row in range(0,height):
     for column in range(0,width - 1):
@@ -127,7 +127,7 @@ textures = correctEmptyTextures(textures)
 texturePointers = [0,0,0,0]
 output = background
 
-print "> 3rd iteration"
+print("> 3rd iteration")
 # 3rd iteration
 for row in range(0,height):
     for column in range(0,width - 1):
@@ -151,8 +151,8 @@ for row in range(0,height):
             output[row, column] = background[row, column]
 
 elapsed_time = time.time() - start_time
-print "Time: "
-print elapsed_time
+print("Time: ")
+print(elapsed_time)
 
 # Save final output
 cv2.imwrite("result.png", output)

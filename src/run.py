@@ -26,7 +26,7 @@ result = camo.camouflage(background, overlay)
 #    if sys.argv[1] == "save":
 #        file_handler.save(result)
 
-print "Done!"
+print("Done!")
 
 # 6. Show the result
 file_handler.save(result)

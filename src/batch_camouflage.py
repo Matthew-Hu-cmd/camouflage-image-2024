@@ -17,13 +17,13 @@ os.makedirs(output_dir, exist_ok=True)
 file_handler = FileHandler()
 camouflager = ImageCamouflager()
 
-# 获取Foreground和Background文件夹中的图片列表
-foreground_images = [f for f in os.listdir(foreground_dir) if f.endswith('.png')]
-background_images = [f for f in os.listdir(background_dir) if f.endswith('.jpg')]
+# 获取Foreground和Background文件夹中的图片列表，并按字母顺序排序
+foreground_images = sorted([f for f in os.listdir(foreground_dir) if f.endswith('.png')])
+background_images = sorted([f for f in os.listdir(background_dir) if f.endswith('.jpg')])
 
-# 获取公共图片名称
-common_names = set([os.path.splitext(f)[0] for f in foreground_images]) & \
-               set([os.path.splitext(f)[0] for f in background_images])
+# 获取公共图片名称，确保公共文件按顺序处理
+common_names = sorted(set([os.path.splitext(f)[0] for f in foreground_images]) & \
+                      set([os.path.splitext(f)[0] for f in background_images]))
 
 # 批量合成并保存结果，并显示进度条
 for name in tqdm(common_names, desc="Processing Images"):
@@ -52,8 +52,5 @@ for name in tqdm(common_names, desc="Processing Images"):
     # 保存结果
     output_path = os.path.join(output_dir, name + "_camouflaged.png")
     result_image.save(output_path)
-
-    # 打印处理信息（可选）
-    # print(f"Processed {name}.png and {name}.jpg, saved to {output_path}")
 
 print("所有图片处理完成。")
